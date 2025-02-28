@@ -1,0 +1,18 @@
+.button {
+	grid-column: 2;
+	height: 65px;
+	color: #f4efeb;
+	background-color: #577c8ef2;
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+	box-shadow: 0px 4px 4px 0px #00000040;
+
+	&:hover {
+		background-color: #376780f2;
+	}
+
+	&:active {
+		background-color: #5d7380f2;
+	}
+}

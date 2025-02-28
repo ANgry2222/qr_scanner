@@ -1,0 +1,71 @@
+.overlay_container {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	display: inline-grid;
+	grid-template-columns: auto 1fr auto 1fr auto;
+	grid-template-rows: auto 1fr auto;
+	padding: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.buttons_panel {
+	grid-row: 3;
+	grid-column-start: 2;
+	grid-column-end: 5;
+	display: inline-block;
+	position: absolute;
+	place-self: center;
+}
+
+@keyframes success_scan {
+	0% {
+		fill: white;
+	}
+
+	12.5% {
+		fill: rgb(1, 204, 1);
+	}
+
+	75% {
+		fill: rgb(1, 204, 1);
+	}
+
+	100% {
+		fill: white;
+	}
+}
+
+.border_element {
+	fill: #fff;
+}
+
+.animation {
+	animation: success_scan 750ms ease-in-out;
+}
+
+.top_left_element {
+	grid-column: 1;
+	grid-row: 1;
+	transform: rotate(90deg);
+}
+
+.top_right_element {
+	grid-column: 5;
+	grid-row: 1;
+	transform: rotate(180deg);
+}
+
+.bottom_left_element {
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.bottom_right_element {
+	grid-column: 5;
+	grid-row: 3;
+	transform: rotate(270deg);
+}

@@ -1,0 +1,17 @@
+.scanner_area {
+	margin-top: 80px;
+	width: 600px;
+	height: 600px;
+	background-color: lightblue;
+	background-image: url("../../images/scanner_background.png");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.scanner_div {
+	min-width: 100%;
+	min-height: 100%;
+	display: inline;
+	position: absolute;
+}
