@@ -20,7 +20,7 @@ export default function ScanResult({ scanResult, onDelete }: IProps) {
 		setIsDragging(true);
 	};
 
-	const handleMouseUp = (e: MouseEvent) => {
+	const handleMouseUp = () => {
 		setIsDragging(false);
 		if (currentX > (elementContainerRef.current?.clientWidth || 3) * 0.5) {
 			onDelete();
@@ -36,7 +36,7 @@ export default function ScanResult({ scanResult, onDelete }: IProps) {
 		}
 	};
 
-	const handleMouseLeave = (e: MouseEvent) => {
+	const handleMouseLeave = () => {
 		if (isDragging) {
 			setIsDragging(false);
 			setCurrentX(0);
@@ -51,9 +51,9 @@ export default function ScanResult({ scanResult, onDelete }: IProps) {
 		>
 			<div
 				onMouseDown={(event) => handleMouseDown(event)}
-				onMouseUp={(event) => handleMouseUp(event)}
+				onMouseUp={handleMouseUp}
 				onMouseMove={(event) => handleMouseMove(event)}
-				onMouseLeave={(event) => handleMouseLeave(event)}
+				onMouseLeave={handleMouseLeave}
 				style={{
 					left: `-${currentX}px`, //rename to deltaX
 				}}

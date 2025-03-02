@@ -6,7 +6,7 @@ export default function DownloadResultsButton() {
 	const items = useAppSelector((state) => state.scanItems.items);
 
 	const downloadFile = () => {
-		let fileContent = items
+		const fileContent = items
 			.map(
 				(item: ScanListItem) =>
 					`${item.scanSum} - ${item.scanDate} - ${item.scanTime}`

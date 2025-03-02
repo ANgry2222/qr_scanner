@@ -11,7 +11,7 @@ import { store } from "../components/store";
 import { setAnimation } from "./slices/AnimationSlice";
 
 export default function StartScanner(data: CameraDevice[]) {
-	var previousScan = "";
+	let previousScan = "";
 
 	const scannerConfig: Html5QrcodeFullConfig = {
 		verbose: false,
