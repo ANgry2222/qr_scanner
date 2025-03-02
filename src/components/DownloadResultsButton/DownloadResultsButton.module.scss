@@ -1,12 +1,31 @@
+@use "../../styles/_media_queries";
+
 .button {
-	grid-column: 2;
-	height: 65px;
 	color: #f4efeb;
 	background-color: #577c8ef2;
 	border: none;
-	border-radius: 10px;
-	font-size: 20px;
+	grid-column: 2;
 	box-shadow: 0px 4px 4px 0px #00000040;
+	border: none;
+	justify-self: center;
+
+	@media #{media_queries.$mobile} {
+		height: 40px;
+		font-size: 17px;
+		width: 100%;
+	}
+
+	@media #{media_queries.$desktop} {
+		margin-top: 70px;
+		height: 65px;
+		border-radius: 10px;
+		font-size: 20px;
+		width: 400px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		margin-top: 15px;
+	}
 
 	&:hover {
 		background-color: #376780f2;

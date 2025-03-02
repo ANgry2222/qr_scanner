@@ -1,31 +1,71 @@
+@use "../../styles/_media_queries";
+
 .list_element_container {
-	height: 100px;
 	background-color: #577c8e;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	margin-bottom: 5px;
+
+	@media #{media_queries.$mobile} {
+		height: 50px;
+	}
+
+	@media #{media_queries.$desktop} {
+		height: 100px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		height: 75px;
+	}
 }
 
 .list_element {
 	height: inherit;
 	width: inherit;
 	display: grid;
-	padding: 0 25px 0 25px;
-	grid-template-columns: auto 1fr auto 20px auto;
+
 	align-items: center;
 	background-color: #c7d9e5;
-	margin-right: 10px;
+
 	position: relative;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+
+	@media #{media_queries.$mobile} {
+		grid-template-columns: auto 1fr auto 4px auto;
+		margin-right: 5px;
+		padding: 0 5px 0 15px;
+	}
+
+	@media #{media_queries.$desktop} {
+		grid-template-columns: auto 1fr auto 20px auto;
+		margin-right: 10px;
+		padding: 0 15px 0 30px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		grid-template-columns: auto 1fr auto 10px auto;
+	}
 }
 
 .list_element__sum {
 	grid-column: 1;
 	user-select: none;
 	grid-row: 1;
-	font-size: 35px;
+
 	color: #2f4157;
+
+	@media #{media_queries.$mobile} {
+		font-size: 16px;
+	}
+
+	@media #{media_queries.$desktop} {
+		font-size: 35px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		font-size: 25px;
+	}
 }
 
 .list_element__date {
@@ -33,7 +73,18 @@
 	user-select: none;
 	grid-row: 1;
 	color: #577c8e;
-	font-size: 30px;
+
+	@media #{media_queries.$mobile} {
+		font-size: 14px;
+	}
+
+	@media #{media_queries.$desktop} {
+		font-size: 30px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		font-size: 23px;
+	}
 }
 
 .list_element__time {
@@ -42,6 +93,18 @@
 	grid-row: 1;
 	color: #577c8e;
 	font-size: 30px;
+
+	@media #{media_queries.$mobile} {
+		font-size: 14px;
+	}
+
+	@media #{media_queries.$desktop} {
+		font-size: 30px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		font-size: 23px;
+	}
 }
 
 .delete_swipe_indicator {

@@ -3,6 +3,8 @@ import ScanSection from "@/components/ScanSection";
 import Modal from "@/components/Modal";
 import { Provider } from "react-redux";
 import { store } from "../components/store";
+import { isMobile } from "react-device-detect";
+import DownloadResultsButton from "@/components/DownloadResultsButton/DownloadResultsButton";
 
 export interface ScanListItem {
 	scanSum: string;
@@ -17,6 +19,7 @@ export default function Home() {
 				<Modal />
 				<ScanSection />
 				<ResultsSection />
+				<DownloadResultsButton />
 			</div>
 		</Provider>
 	);

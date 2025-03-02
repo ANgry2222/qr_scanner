@@ -1,24 +1,59 @@
+@use "../../styles/_media_queries";
+
 .results_table__table_header {
 	display: grid;
-	grid-template-columns: auto 1fr auto 33px auto 40px;
+
+	@media #{media_queries.$mobile} {
+		grid-template-columns: auto 1fr auto 11px auto 15px;
+	}
+
+	@media #{media_queries.$desktop} {
+		grid-template-columns: auto 1fr auto 33px auto 40px;
+	}
 }
 
 .results_table__items_list {
 	display: grid;
-	row-gap: 5px;
 	min-height: 50px;
 	grid-row: 2;
 	max-height: calc(100vh - 250px);
 	overflow-y: scroll;
 	overflow-x: hidden;
-	margin-top: 25px;
-	padding-right: 10px;
+
+	@media #{media_queries.$mobile} {
+		row-gap: 3px;
+		padding: 0 5px 0 10px;
+		margin-top: 10px;
+	}
+
+	@media #{media_queries.$desktop} {
+		row-gap: 10px;
+		margin-top: 25px;
+		padding: 0 10px 0 10px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		row-gap: 5px;
+	}
 }
 
 .table_header__p {
 	grid-column: 1;
-	font-size: 45px;
-	line-height: 55px;
+	margin-left: 10px;
+
+	@media #{media_queries.$mobile} {
+		line-height: 24px;
+		font-size: 20px;
+	}
+
+	@media #{media_queries.$desktop} {
+		font-size: 45px;
+		line-height: 55px;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		font-size: 26px;
+	}
 }
 
 .table_header__add_item_button {
@@ -30,8 +65,28 @@
 }
 
 .results_table__items_list {
-	&::-webkit-scrollbar {
-		width: 20px;
+	@media #{media_queries.$mobile} {
+		&::-webkit-scrollbar-track {
+			margin-bottom: 3px;
+		}
+		&::-webkit-scrollbar {
+			width: 7px;
+		}
+	}
+
+	@media #{media_queries.$desktop} {
+		&::-webkit-scrollbar-track {
+			margin-bottom: 5px;
+		}
+		&::-webkit-scrollbar {
+			width: 20px;
+		}
+	}
+
+	@media #{media_queries.$desktop_small} {
+		&::-webkit-scrollbar {
+			width: 11px;
+		}
 	}
 
 	&::-webkit-scrollbar-track {

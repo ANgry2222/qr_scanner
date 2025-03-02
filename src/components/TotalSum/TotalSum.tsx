@@ -15,9 +15,7 @@ export default function TotalSum() {
 
 	return (
 		<div className={styles.total_sum__container}>
-			<span className={styles.total_sum__text}>
-				Общая сумма: {calculateSum(items)}
-			</span>
+			<span>Общая сумма: {calculateSum(items)}</span>
 		</div>
 	);
 }

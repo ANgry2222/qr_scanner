@@ -1,9 +1,25 @@
-.total_sum__container {
-	border-top: 15px solid #2f4157;
-	padding: 35px 40px 50px 0;
-	text-align: right;
-}
+@use "../../styles/_media_queries";
 
-.total_sum__text {
-	font-size: 40px;
+.total_sum__container {
+	box-sizing: content-box;
+
+	@media #{media_queries.$mobile} {
+		padding: 10px 0 10px 10px;
+		font-size: 18px;
+		text-align: left;
+		border-top: 2px solid #2f4157;
+	}
+
+	@media #{media_queries.$desktop} {
+		padding: 35px 40px 50px 0;
+		font-size: 40px;
+		text-align: right;
+		border-top: 15px solid #2f4157;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		padding: 15px 30px 25px 0;
+		font-size: 26px;
+		border-top: 8px solid #2f4157;
+	}
 }
