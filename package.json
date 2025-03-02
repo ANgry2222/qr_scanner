@@ -2,14 +2,11 @@
   "name": "qr_reader",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://angry2222.github.io/qr_scanner",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
