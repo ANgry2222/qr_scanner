@@ -2,8 +2,9 @@ import styles from "./ResultsTable.module.scss";
 import { openModal } from "../slices/ModalSlice";
 import { clearItemsList } from "../slices/ItemListSlice";
 import { useAppDispatch } from "@/hooks/ReduxHooks";
+import { ReactNode } from "react";
 
-export default function ResultsTable({ children }: any) {
+export default function ResultsTable(children: ReactNode) {
 	const dispatch = useAppDispatch();
 
 	return (

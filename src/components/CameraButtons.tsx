@@ -8,6 +8,7 @@ import { isDesktop } from "react-device-detect";
 import StartScanner from "./StartScanner";
 import { stopScanner } from "./slices/ScannerSlice";
 import { useAppDispatch } from "@/hooks/ReduxHooks";
+import Image from "next/image";
 
 export default function CameraButtons() {
 	const [isScanning, setIsScanning] = useState<boolean>(false);
@@ -40,27 +41,36 @@ export default function CameraButtons() {
 	};
 
 	if (!isScanning) {
-		return <img onClick={onRequestCameraAccess} src={start_image.src} />;
+		return (
+			<Image
+				onClick={onRequestCameraAccess}
+				src={start_image.src}
+				alt="Начать сканирование"
+			/>
+		);
 	} else {
 		if (!isDesktop) {
 			return (
 				<div>
-					<img
+					<Image
 						style={{ marginRight: "27px" }}
 						onClick={handleReverseClick}
 						src={turn_camera_icon.src}
+						alt="Поворот камеры"
 					/>
-					<img
+					<Image
 						onClick={handleStopScanClick}
 						src={cross_image_mobile.src}
+						alt="Остановить сканирование"
 					/>
 				</div>
 			);
 		} else {
 			return (
-				<img
+				<Image
 					onClick={handleStopScanClick}
 					src={cross_image_desktop.src}
+					alt="Остановить сканирование"
 				/>
 			);
 		}
