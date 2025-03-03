@@ -14,18 +14,19 @@
 
 .stop_button {
 	@media #{media_queries.$mobile} {
-		width: 45px;
-		height: 45px;
+		margin-top: 5px;
+		width: 54px;
+		height: 54px;
 	}
 
 	@media #{media_queries.$desktop} {
-		width: 84px;
-		height: 84px;
+		width: 90px;
+		height: 90px;
 	}
 }
 
 .reverse_button {
 	width: 45px;
 	height: 45px;
-	margin-right: 27px;
+	margin-right: 12px;
 }
