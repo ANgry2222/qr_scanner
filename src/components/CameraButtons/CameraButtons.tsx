@@ -1,13 +1,13 @@
 import { Html5Qrcode, CameraDevice } from "html5-qrcode";
 import { useState } from "react";
-import start_image from "../images/start_button_desktop.png";
-import cross_image_mobile from "../images/cross_icon_mobile.png";
-import cross_image_desktop from "../images/cross_icon_desktop.png";
-import turn_camera_icon from "../images/turn_camera_icon.png";
 import { isDesktop } from "react-device-detect";
-import StartScanner from "./StartScanner";
-import { stopScanner } from "./slices/ScannerSlice";
+import StartScanner from "../StartScanner";
+import { stopScanner } from "../slices/ScannerSlice";
 import { useAppDispatch } from "@/hooks/ReduxHooks";
+import { StartIcon } from "../icons/StartIcon";
+import styles from "./CameraButtons.module.scss";
+import { StopIcon } from "../icons/StopIcon";
+import { ReverseIcon } from "../icons/RevreseIcon";
 
 export default function CameraButtons() {
 	const [isScanning, setIsScanning] = useState<boolean>(false);
@@ -40,27 +40,31 @@ export default function CameraButtons() {
 	};
 
 	if (!isScanning) {
-		return <img onClick={onRequestCameraAccess} src={start_image.src} />;
+		return (
+			<StartIcon
+				onClick={onRequestCameraAccess}
+				className={styles.start_button}
+			/>
+		);
 	} else {
 		if (!isDesktop) {
 			return (
 				<div>
-					<img
-						style={{ marginRight: "27px" }}
+					<ReverseIcon
+						className={styles.reverse_button}
 						onClick={handleReverseClick}
-						src={turn_camera_icon.src}
 					/>
-					<img
+					<StopIcon
+						className={styles.stop_button}
 						onClick={handleStopScanClick}
-						src={cross_image_mobile.src}
 					/>
 				</div>
 			);
 		} else {
 			return (
-				<img
+				<StopIcon
+					className={styles.stop_button}
 					onClick={handleStopScanClick}
-					src={cross_image_desktop.src}
 				/>
 			);
 		}

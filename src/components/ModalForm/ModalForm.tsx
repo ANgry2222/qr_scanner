@@ -17,7 +17,7 @@ export default function Modal() {
 	const dateFieldRef = useRef<HTMLInputElement | null>(null);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		let { name, value } = e.target;
+		const { name, value } = e.target;
 		if (
 			name === "field1" &&
 			sumFieldRef.current?.classList.contains(styles.input_error)
@@ -46,15 +46,14 @@ export default function Modal() {
 		dispatch(closeModal());
 	};
 
-	const handleSubmit = (e: any) => {
-		e.preventDefault();
+	const handleSubmit = () => {
 		if (formData.field1 && formData.field3) {
 			let formattedSum = formData.field1;
 			if (!formattedSum.includes(".")) {
 				formattedSum += ".00";
 			}
 
-			let formattedDate = `${formData.field3.split("-")[2]}.${
+			const formattedDate = `${formData.field3.split("-")[2]}.${
 				formData.field3.split("-")[1]
 			}.${formData.field3.split("-")[0].substring(0, 4)}`;
 
