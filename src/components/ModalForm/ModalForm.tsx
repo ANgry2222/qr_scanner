@@ -46,8 +46,7 @@ export default function Modal() {
 		dispatch(closeModal());
 	};
 
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
+	const handleSubmit = () => {
 		if (formData.field1 && formData.field3) {
 			let formattedSum = formData.field1;
 			if (!formattedSum.includes(".")) {

@@ -1,0 +1,31 @@
+@use "../../styles/_media_queries";
+
+.start_button {
+	@media #{media_queries.$mobile} {
+		width: 54px;
+		height: 54px;
+	}
+
+	@media #{media_queries.$desktop} {
+		width: 84px;
+		height: 84px;
+	}
+}
+
+.stop_button {
+	@media #{media_queries.$mobile} {
+		width: 45px;
+		height: 45px;
+	}
+
+	@media #{media_queries.$desktop} {
+		width: 84px;
+		height: 84px;
+	}
+}
+
+.reverse_button {
+	width: 45px;
+	height: 45px;
+	margin-right: 27px;
+}

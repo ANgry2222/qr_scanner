@@ -2,6 +2,7 @@
 
 .results_table__table_header {
 	display: grid;
+	align-items: center;
 
 	@media #{media_queries.$mobile} {
 		grid-template-columns: auto 1fr auto 11px auto 15px;
@@ -17,7 +18,7 @@
 	min-height: 50px;
 	grid-row: 2;
 	max-height: calc(100vh - 250px);
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
 
 	@media #{media_queries.$mobile} {
@@ -42,13 +43,11 @@
 	margin-left: 10px;
 
 	@media #{media_queries.$mobile} {
-		line-height: 24px;
-		font-size: 20px;
+		font-size: 24px;
 	}
 
 	@media #{media_queries.$desktop} {
 		font-size: 45px;
-		line-height: 55px;
 	}
 
 	@media #{media_queries.$desktop_small} {
@@ -58,10 +57,29 @@
 
 .table_header__add_item_button {
 	grid-column: 3;
+	@media #{media_queries.$mobile} {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media #{media_queries.$desktop} {
+		width: 35px;
+		height: 35px;
+	}
 }
 
 .table_header__clear_all_button {
 	grid-column: 5;
+
+	@media #{media_queries.$mobile} {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media #{media_queries.$desktop} {
+		width: 35px;
+		height: 35px;
+	}
 }
 
 .results_table__items_list {
