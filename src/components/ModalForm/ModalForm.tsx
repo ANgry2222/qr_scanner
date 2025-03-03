@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./ModalForm.module.scss";
 import { closeModal } from "../slices/ModalSlice";
 import { addItem } from "../slices/ItemListSlice";
