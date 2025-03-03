@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 	assetPrefix: isProd ? "/qr_scanner/" : "",
 	basePath: isProd ? "/qr_scanner" : "",
 	output: "export",
+	distDir: "dist",
 };
 
 export default nextConfig;

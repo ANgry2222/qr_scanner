@@ -9,29 +9,29 @@
 	background-position: center;
 	position: relative;
 
-	// @media #{media_queries.$mobile} {
-	// 	width: 390px;
-	// 	height: 390px;
-	// 	margin-top: 20px;
-	// }
+	@media #{media_queries.$mobile} {
+		width: 390px;
+		height: 390px;
+		margin-top: 20px;
+	}
 
-	// @media #{media_queries.$desktop_medium} {
-	// 	margin-top: 80px;
-	// 	width: 600px;
-	// 	height: 600px;
-	// }
+	@media #{media_queries.$desktop_medium} {
+		margin-top: 80px;
+		width: 600px;
+		height: 600px;
+	}
 
-	// @media #{media_queries.$desktop_small} {
-	// 	margin-top: 25px;
-	// 	width: 500px;
-	// 	height: 500px;
-	// }
+	@media #{media_queries.$desktop_small} {
+		margin-top: 25px;
+		width: 500px;
+		height: 500px;
+	}
 
-	// @media #{media_queries.$desktop_big} {
-	// 	margin-top: 80px;
-	// 	width: 1000px;
-	// 	height: 1000px;
-	// }
+	@media #{media_queries.$desktop_big} {
+		margin-top: 80px;
+		width: 1000px;
+		height: 1000px;
+	}
 }
 
 .scanner_div {
