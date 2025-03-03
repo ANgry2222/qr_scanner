@@ -61,10 +61,13 @@ export default function CameraButtons() {
 				</div>
 			);
 		} else {
-			<StopIcon
-				className={styles.stop_button}
-				onClick={handleStopScanClick}
-			/>;
+			<div>
+				<StopIcon
+					className={styles.stop_button}
+					onClick={handleStopScanClick}
+				/>
+				;
+			</div>;
 		}
 	}
 }
