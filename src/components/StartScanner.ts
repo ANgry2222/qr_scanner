@@ -33,7 +33,7 @@ export default function StartScanner(data: CameraDevice[]) {
 					store.dispatch(setAnimation(true));
 					setTimeout(() => {
 						store.dispatch(setAnimation(false));
-					}, 1);
+					}, 1000);
 					previousScan = decodedText;
 					store.dispatch(addItem(ProcessScanData(decodedText)));
 				}
