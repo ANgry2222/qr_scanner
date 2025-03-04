@@ -28,6 +28,7 @@ export default function StartScanner(data: CameraDevice[]) {
 			{
 				aspectRatio: 1,
 				fps: 15,
+				disableFlip: false,
 			},
 			(decodedText) => {
 				if (previousScan !== decodedText) {
