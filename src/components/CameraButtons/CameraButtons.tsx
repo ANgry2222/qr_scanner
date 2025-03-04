@@ -24,6 +24,7 @@ export default function CameraButtons() {
 		if (scannerUpdateResize || scannerUpdateReverse) {
 			if (scannerUpdateReverse) {
 				dispatch(changeDevice());
+				dispatch(setReverseUpdate(false));
 			}
 			Html5Qrcode.getCameras()
 				.then((devices: CameraDevice[]) => {
@@ -43,7 +44,6 @@ export default function CameraButtons() {
 	}, [scannerUpdateResize, scannerUpdateReverse, dispatch]);
 	const handleReverseClick = () => {
 		dispatch(setReverseUpdate(true));
-		dispatch(setReverseUpdate(false));
 	};
 
 	const handleStopScanClick = () => {
