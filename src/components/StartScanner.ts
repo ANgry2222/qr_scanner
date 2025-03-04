@@ -17,16 +17,17 @@ export default function StartScanner(data: CameraDevice[]) {
 		verbose: false,
 		formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE],
 	};
-
+	const currentDeviceIndex =
+		store.getState().scanner_update.currentDeviceIndex;
 	const scanner = new Html5Qrcode("reader", scannerConfig);
 	store.dispatch(setScanner(scanner));
 
 	scanner
 		.start(
-			data[0].id,
+			data[currentDeviceIndex].id,
 			{
 				aspectRatio: 1,
-				fps: 18,
+				fps: 15,
 			},
 			(decodedText) => {
 				if (previousScan !== decodedText) {
