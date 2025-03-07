@@ -17,12 +17,6 @@ export const ScannerUpdateSlice = createSlice({
 	name: "scanner_update",
 	initialState,
 	reducers: {
-		setReverseUpdate: (state, action: PayloadAction<boolean>) => {
-			state.needsUpdateAfterReverse = action.payload;
-		},
-		setResizeUpdate: (state, action: PayloadAction<boolean>) => {
-			state.needsUpdateAfterResize = action.payload;
-		},
 		changeDevice: (state) => {
 			if (state.currentDeviceIndex === 0) {
 				state.currentDeviceIndex = 1;
@@ -33,8 +27,5 @@ export const ScannerUpdateSlice = createSlice({
 	},
 });
 
-export const { setReverseUpdate, setResizeUpdate, changeDevice } =
-	ScannerUpdateSlice.actions;
-export const selectAnimationStatus = (state: RootState) =>
-	state.animate.isAnimating;
+export const { changeDevice } = ScannerUpdateSlice.actions;
 export default ScannerUpdateSlice.reducer;

@@ -1,5 +1,5 @@
 import { Html5Qrcode, CameraDevice } from "html5-qrcode";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { isDesktop } from "react-device-detect";
 import StartScanner from "../StartScanner";
 import { stopScanner } from "../slices/ScannerSlice";
@@ -8,42 +8,18 @@ import { StartIcon } from "../icons/StartIcon";
 import styles from "./CameraButtons.module.scss";
 import { StopIcon } from "../icons/StopIcon";
 import { ReverseIcon } from "../icons/RevreseIcon";
-import { changeDevice, setReverseUpdate } from "../slices/ScannerUpdateSlice";
+import { changeDevice } from "../slices/ScannerUpdateSlice";
 
 export default function CameraButtons() {
 	const [isScanning, setIsScanning] = useState<boolean>(false);
 	const dispatch = useAppDispatch();
-	const scannerUpdateResize = useAppSelector(
-		(state) => state.scanner_update.needsUpdateAfterResize
-	);
-	const scannerUpdateReverse = useAppSelector(
-		(state) => state.scanner_update.needsUpdateAfterReverse
-	);
 
-	useEffect(() => {
-		if (scannerUpdateResize || scannerUpdateReverse) {
-			if (scannerUpdateReverse) {
-				dispatch(changeDevice());
-				dispatch(setReverseUpdate(false));
-			}
-			Html5Qrcode.getCameras()
-				.then((devices: CameraDevice[]) => {
-					if (devices) {
-						try {
-							StartScanner(devices);
-							setIsScanning(true);
-						} catch (error) {
-							console.log(error);
-						}
-					}
-				})
-				.catch((err) => {
-					alert(err);
-				});
-		}
-	}, [scannerUpdateResize, scannerUpdateReverse, dispatch]);
 	const handleReverseClick = () => {
-		dispatch(setReverseUpdate(true));
+		dispatch(changeDevice());
+		setTimeout(() => {
+			dispatch(stopScanner());
+			StartScanner();
+		}, 200);
 	};
 
 	const handleStopScanClick = () => {
@@ -52,20 +28,8 @@ export default function CameraButtons() {
 	};
 
 	const onRequestCameraAccess = () => {
-		Html5Qrcode.getCameras()
-			.then((devices: CameraDevice[]) => {
-				if (devices) {
-					try {
-						StartScanner(devices);
-						setIsScanning(true);
-					} catch (error) {
-						console.log(error);
-					}
-				}
-			})
-			.catch((err) => {
-				alert(err);
-			});
+		let result = StartScanner();
+		if (result) setIsScanning(true);
 	};
 
 	if (!isScanning) {

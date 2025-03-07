@@ -26,7 +26,16 @@
 }
 
 .reverse_button {
-	width: 54px;
-	height: 54px;
 	margin-right: 12px;
+
+	@media #{media_queries.$mobile} {
+		margin-top: 5px;
+		width: 54px;
+		height: 54px;
+	}
+
+	@media #{media_queries.$desktop} {
+		width: 90px;
+		height: 90px;
+	}
 }
