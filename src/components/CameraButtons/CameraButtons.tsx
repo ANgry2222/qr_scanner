@@ -1,9 +1,8 @@
-import { Html5Qrcode, CameraDevice } from "html5-qrcode";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { isDesktop } from "react-device-detect";
 import StartScanner from "../StartScanner";
 import { stopScanner } from "../slices/ScannerSlice";
-import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
+import { useAppDispatch } from "@/hooks/ReduxHooks";
 import { StartIcon } from "../icons/StartIcon";
 import styles from "./CameraButtons.module.scss";
 import { StopIcon } from "../icons/StopIcon";
@@ -28,8 +27,7 @@ export default function CameraButtons() {
 	};
 
 	const onRequestCameraAccess = () => {
-		let result = StartScanner();
-		if (result) setIsScanning(true);
+		if (StartScanner()) setIsScanning(true);
 	};
 
 	if (!isScanning) {
