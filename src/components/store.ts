@@ -3,6 +3,7 @@ import modalReducer from "./slices/ModalSlice";
 import itemListReducer from "./slices/ItemListSlice";
 import scannerReducer from "./slices/ScannerSlice";
 import animationReducer from "./slices/AnimationSlice";
+import scannerUpdateReducer from "./slices/ScannerUpdateSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
 		scanItems: itemListReducer,
 		scannerReducer: scannerReducer,
 		animate: animationReducer,
+		scanner_update: scannerUpdateReducer,
 	},
 });
 

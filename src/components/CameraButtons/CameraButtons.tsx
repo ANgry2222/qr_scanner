@@ -1,4 +1,3 @@
-import { Html5Qrcode, CameraDevice } from "html5-qrcode";
 import { useState } from "react";
 import { isDesktop } from "react-device-detect";
 import StartScanner from "../StartScanner";
@@ -8,13 +7,18 @@ import { StartIcon } from "../icons/StartIcon";
 import styles from "./CameraButtons.module.scss";
 import { StopIcon } from "../icons/StopIcon";
 import { ReverseIcon } from "../icons/RevreseIcon";
+import { changeDevice } from "../slices/ScannerUpdateSlice";
 
 export default function CameraButtons() {
 	const [isScanning, setIsScanning] = useState<boolean>(false);
 	const dispatch = useAppDispatch();
 
 	const handleReverseClick = () => {
-		console.log("reverse");
+		dispatch(changeDevice());
+		setTimeout(() => {
+			dispatch(stopScanner());
+			StartScanner();
+		}, 200);
 	};
 
 	const handleStopScanClick = () => {
@@ -23,20 +27,7 @@ export default function CameraButtons() {
 	};
 
 	const onRequestCameraAccess = () => {
-		Html5Qrcode.getCameras()
-			.then((devices: CameraDevice[]) => {
-				if (devices) {
-					try {
-						StartScanner(devices);
-						setIsScanning(true);
-					} catch (error) {
-						console.log(error);
-					}
-				}
-			})
-			.catch((err) => {
-				alert(err);
-			});
+		if (StartScanner()) setIsScanning(true);
 	};
 
 	if (!isScanning) {
