@@ -1,6 +1,9 @@
+@use "../../styles/_media_queries";
+
 .form_header {
 	grid-row: 1;
 	grid-column: 1;
+	font-size: 20px;
 }
 
 .modal_form_section {
@@ -11,8 +14,16 @@
 	width: auto;
 	height: auto;
 	background-color: #ffffff;
-	border-radius: 10px;
+	border-radius: 25px;
 	text-align: center;
+
+	@media #{media_queries.$mobile} {
+		width: min(77vw, 400px);
+	}
+
+	@media #{media_queries.$desktop} {
+		width: min(25vw, 800px);
+	}
 }
 
 .close_btn {
@@ -27,7 +38,7 @@
 }
 
 .modal_form__form {
-	margin-top: 10px;
+	margin: 3px 5px 0 5px;
 	grid-row: 3;
 	text-align: center;
 	display: grid;
@@ -42,28 +53,42 @@
 .field_container__p {
 	text-align: left;
 	grid-row: 1;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	margin-top: 20px;
 }
 
 .field_container__input {
-	height: 25px;
 	grid-row: 3;
-	margin-bottom: 10px;
-	padding-left: 10px;
-	border: 1px solid black;
-	border-radius: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: none;
+	border-bottom: 3px solid #5f8393;
+	font-size: 18px;
+	font-weight: 500;
+	vertical-align: bottom;
+	text-align: bottom;
+	box-sizing: content-box;
+
+	color: #5f8393;
+
+	&::placeholder {
+		color: #727773;
+	}
 
 	&:focus {
-		border: 1px solid black;
+		outline: none;
 	}
 }
 
 .submit_button {
 	color: white;
-	background-color: #577c8ef2;
+	background-color: #5f8393;
 	border: none;
-	border-radius: 5px;
-	height: 30px;
-	margin-top: 10px;
+	border-radius: 10px;
+	height: 40px;
+	margin: 60px 5px 0 5px;
 
 	&:hover {
 		background-color: #334e5cf2;
@@ -71,6 +96,5 @@
 }
 
 .input_error {
-	border: 1px solid rgb(235, 75, 75);
-	border-radius: 5px;
+	border-bottom: 3px solid red;
 }
