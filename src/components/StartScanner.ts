@@ -21,6 +21,7 @@ export default function StartScanner() {
 		store.getState().scanner_update.currentDeviceIndex;
 	const scanner = new Html5Qrcode("reader", scannerConfig);
 	store.dispatch(setScanner(scanner));
+
 	Html5Qrcode.getCameras()
 		.then((devices: CameraDevice[]) => {
 			if (devices) {
@@ -56,10 +57,15 @@ export default function StartScanner() {
 						}
 						store.dispatch(setIsScanning(true));
 					})
-					.catch((err) => {
-						console.log(err);
-						alert(`Произошла ошибка сканирования ${err}`);
+					.catch(() => {
+						alert(
+							"Ошибка при запуске сканера. Возможно в системе нет камеры."
+						);
 					});
+			} else {
+				alert(
+					"Ошибка: камера не обнаружена. Проверьте подключение камеры."
+				);
 			}
 		})
 		.catch(() => {
