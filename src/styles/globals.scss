@@ -41,6 +41,52 @@ a {
 	text-decoration: none;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+	background-image: url("../components/icons/CalendarIcon.svg");
+	background-size: cover;
+	width: 22px;
+	height: 22px;
+	margin-bottom: 3px;
+
+	&:hover {
+		background-image: url("../components/icons/CalendarIconHover.svg");
+	}
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+	background-image: url("../components/icons/ClockIcon.svg");
+	background-size: cover;
+	width: 22px;
+	height: 22px;
+	margin-bottom: 3px;
+
+	&:hover {
+		background-image: url("../components/icons/ClockIconHover.svg");
+	}
+}
+
+input[type="number"] {
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		background-image: url("../components/icons/ArrowIcon.svg");
+		background-size: cover;
+		width: 20px;
+		height: 20px;
+		cursor: cell;
+		opacity: 1;
+		margin-bottom: 3px;
+		margin-right: 5px;
+
+		&:active {
+			outline: none;
+		}
+
+		&:hover {
+			background-image: url("../components/icons/ArrowIconHover.svg");
+		}
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
@@ -48,7 +94,6 @@ a {
 }
 
 .open_dialog {
-	display: inline-flex;
 	background-color: rgba(0, 0, 0, 0.5);
 	justify-content: center;
 	align-items: center;
@@ -58,6 +103,16 @@ a {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	@media #{media_queries.$mobile} {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: 165px auto 1fr;
+	}
+
+	@media #{media_queries.$desktop} {
+		display: inline-flex;
+	}
 }
 
 .app_container {
