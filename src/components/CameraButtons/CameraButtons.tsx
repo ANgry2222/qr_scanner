@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { isDesktop } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import StartScanner from "../StartScanner";
 import { stopScanner } from "../slices/ScannerSlice";
-import { useAppDispatch } from "@/hooks/ReduxHooks";
+import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
 import { StartIcon } from "../icons/StartIcon";
 import styles from "./CameraButtons.module.scss";
 import { StopIcon } from "../icons/StopIcon";
@@ -10,8 +9,10 @@ import { ReverseIcon } from "../icons/RevreseIcon";
 import { changeDevice } from "../slices/ScannerUpdateSlice";
 
 export default function CameraButtons() {
-	const [isScanning, setIsScanning] = useState<boolean>(false);
 	const dispatch = useAppDispatch();
+	const isScanning = useAppSelector(
+		(state) => state.scannerReducer.isScanning
+	);
 
 	const handleReverseClick = () => {
 		dispatch(changeDevice());
@@ -23,11 +24,10 @@ export default function CameraButtons() {
 
 	const handleStopScanClick = () => {
 		dispatch(stopScanner());
-		setIsScanning(false);
 	};
 
 	const onRequestCameraAccess = () => {
-		if (StartScanner()) setIsScanning(true);
+		StartScanner();
 	};
 
 	if (!isScanning) {
@@ -38,7 +38,7 @@ export default function CameraButtons() {
 			/>
 		);
 	} else {
-		if (!isDesktop) {
+		if (isMobile) {
 			return (
 				<div>
 					<ReverseIcon

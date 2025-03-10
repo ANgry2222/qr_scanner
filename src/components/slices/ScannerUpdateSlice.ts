@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface ScannerUpdateState {
-	needsUpdateAfterResize: boolean;
 	needsUpdateAfterReverse: boolean;
 	currentDeviceIndex: number;
 }
 
 const initialState: ScannerUpdateState = {
-	needsUpdateAfterResize: false,
 	needsUpdateAfterReverse: false,
 	currentDeviceIndex: 0,
 };

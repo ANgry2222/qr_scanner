@@ -42,33 +42,33 @@ a {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-	background-image: url("../components/icons/CalendarIcon.svg"); /* Путь к вашей иконке */
+	background-image: url("../components/icons/CalendarIcon.svg");
 	background-size: cover;
 	width: 22px;
 	height: 22px;
 	margin-bottom: 3px;
 
 	&:hover {
-		background-image: url("../components/icons/CalendarIconHover.svg"); /* Путь к вашей иконке */
+		background-image: url("../components/icons/CalendarIconHover.svg");
 	}
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
-	background-image: url("../components/icons/ClockIcon.svg"); /* Путь к вашей иконке */
+	background-image: url("../components/icons/ClockIcon.svg");
 	background-size: cover;
 	width: 22px;
 	height: 22px;
 	margin-bottom: 3px;
 
 	&:hover {
-		background-image: url("../components/icons/ClockIconHover.svg"); /* Путь к вашей иконке */
+		background-image: url("../components/icons/ClockIconHover.svg");
 	}
 }
 
 input[type="number"] {
 	&::-webkit-inner-spin-button {
 		-webkit-appearance: none;
-		background-image: url("../components/icons/ArrowIcon.svg"); /* Путь к вашей иконке */
+		background-image: url("../components/icons/ArrowIcon.svg");
 		background-size: cover;
 		width: 20px;
 		height: 20px;
@@ -82,7 +82,7 @@ input[type="number"] {
 		}
 
 		&:hover {
-			background-image: url("../components/icons/ArrowIconHover.svg"); /* Путь к вашей иконке */
+			background-image: url("../components/icons/ArrowIconHover.svg");
 		}
 	}
 }
