@@ -24,7 +24,15 @@ export default function ResultsTable({ children }: { children: ReactNode[] }) {
 					onClick={() => dispatch(clearItemsList())}
 				/>
 			</div>
-			<div className={styles.results_table__items_list}>{children}</div>
+			<div className={styles.results_table__items_list}>
+				{children.length > 0 ? (
+					children
+				) : (
+					<div className={styles.results_table__placeholder}>
+						Добавьте результат вручную или отсканируйте QR-код
+					</div>
+				)}
+			</div>
 		</div>
 	);
 }

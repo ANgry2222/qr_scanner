@@ -10,6 +10,12 @@
 		width: 84px;
 		height: 84px;
 	}
+
+	&:hover {
+		path {
+			fill: #f3f3f3;
+		}
+	}
 }
 
 .stop_button {
@@ -22,6 +28,12 @@
 	@media #{media_queries.$desktop} {
 		width: 90px;
 		height: 90px;
+	}
+
+	&:hover {
+		path {
+			fill: #f3f3f3;
+		}
 	}
 }
 
@@ -37,5 +49,11 @@
 	@media #{media_queries.$desktop} {
 		width: 90px;
 		height: 90px;
+	}
+
+	&:hover {
+		path {
+			fill: #f3f3f3;
+		}
 	}
 }

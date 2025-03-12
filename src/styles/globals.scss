@@ -152,6 +152,9 @@ input[type="number"] {
 }
 
 .results_container {
+	display: grid;
+	grid-template-rows: 1fr auto;
+
 	@media #{media_queries.$desktop} {
 		grid-column: 4;
 		margin-top: 20px;

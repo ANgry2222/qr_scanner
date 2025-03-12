@@ -12,7 +12,7 @@ export default function ResultSection() {
 	return (
 		<div className="results_container">
 			<ResultsTable>
-				{items?.map((item: ScanListItem, index: number) => (
+				{items.map((item: ScanListItem, index: number) => (
 					<ScanResult
 						key={index}
 						scanResult={item}
