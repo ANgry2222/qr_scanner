@@ -70,11 +70,10 @@
 	vertical-align: bottom;
 	text-align: bottom;
 	box-sizing: content-box;
-
 	color: #5f8393;
 
 	&::placeholder {
-		color: #727773;
+		color: #a6a6a6;
 	}
 
 	&:focus {
@@ -91,7 +90,11 @@
 	margin: 60px 5px 0 5px;
 
 	&:hover {
-		background-color: #334e5cf2;
+		background-color: #2f4157;
+	}
+
+	&:active {
+		background-color: #5d7380f2;
 	}
 }
 

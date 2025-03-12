@@ -12,14 +12,14 @@
 
 	@media #{media_queries.$desktop} {
 		padding: 35px 40px 50px 0;
-		font-size: 40px;
+		font-size: 28px;
 		text-align: right;
 		border-top: 15px solid #2f4157;
 	}
 
 	@media #{media_queries.$desktop_small} {
 		padding: 15px 30px 25px 0;
-		font-size: 26px;
+		font-size: 24px;
 		border-top: 8px solid #2f4157;
 	}
 }
