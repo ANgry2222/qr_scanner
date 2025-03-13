@@ -1,4 +1,4 @@
-import { ScanListItem } from "@/pages/home";
+import { ScanListItem } from "@/pages";
 import styles from "./TotalSum.module.scss";
 import { useAppSelector } from "@/hooks/ReduxHooks";
 

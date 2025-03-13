@@ -2,7 +2,7 @@ import ResultsTable from "./ResultsTable/ResultsTable";
 import ScanResult from "./ScanResult/ScanResult";
 import TotalSum from "./TotalSum/TotalSum";
 import { removeItemByIndex } from "./slices/ItemListSlice";
-import { ScanListItem } from "@/pages/home";
+import { ScanListItem } from "@/pages";
 import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
 
 export default function ResultSection() {

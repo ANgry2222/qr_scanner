@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ScanListItem } from "@/pages/home";
+import { ScanListItem } from "@/pages";
 import { RootState } from "../store";
 
 export interface ItemListState {
