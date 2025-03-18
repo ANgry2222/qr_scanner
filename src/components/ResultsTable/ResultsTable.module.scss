@@ -33,14 +33,22 @@
 		height: calc(100vh - 100vw - 133px);
 	}
 
-	@media #{media_queries.$desktop} {
-		row-gap: 10px;
-		margin-top: 25px;
-		height: calc(100vh - 33px - 25px - 77px - 15px);
-	}
-
 	@media #{media_queries.$desktop_small} {
 		row-gap: 5px;
+		margin-top: 20px;
+		height: calc(100vh - 149px);
+	}
+
+	@media #{media_queries.$desktop_medium} {
+		row-gap: 10px;
+		margin-top: 25px;
+		height: calc(100vh - 218px);
+	}
+
+	@media #{media_queries.$desktop_big} {
+		row-gap: 10px;
+		margin-top: 25px;
+		height: calc(100vh - 218px);
 	}
 }
 
