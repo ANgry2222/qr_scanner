@@ -37,7 +37,11 @@ export default function DownloadResultsButton() {
 		document.body.removeChild(link);
 	};
 	return (
-		<button className={styles.button} onClick={downloadFile}>
+		<button
+			disabled={items.length === 0}
+			className={styles.button}
+			onClick={downloadFile}
+		>
 			Скачать результаты
 		</button>
 	);

@@ -82,6 +82,7 @@
 	}
 
 	&:hover {
+		cursor: pointer;
 		path {
 			stroke: #759e4f;
 		}
@@ -114,6 +115,7 @@
 	}
 
 	&:hover {
+		cursor: pointer;
 		path {
 			fill: #da0000;
 		}
