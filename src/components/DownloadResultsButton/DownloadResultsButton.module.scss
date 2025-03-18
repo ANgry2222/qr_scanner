@@ -29,9 +29,14 @@
 
 	&:hover {
 		background-color: #2f4157;
+		cursor: pointer;
 	}
 
 	&:active {
 		background-color: #5d7380f2;
+	}
+
+	&:disabled {
+		background-color: #8c969a;
 	}
 }
