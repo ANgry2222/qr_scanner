@@ -5,10 +5,10 @@ import {
 	Html5QrcodeSupportedFormats,
 } from "html5-qrcode";
 import { ProcessScanData } from "./ProcessScanData";
-import { addItem } from "./slices/ItemListSlice";
-import { setScanner, setIsScanning } from "./slices/ScannerSlice";
-import { store } from "../components/store";
-import { setAnimation } from "./slices/AnimationSlice";
+import { addItem } from "../store/slices/ItemListSlice";
+import { setScanner, setIsScanning } from "../store/slices/ScannerSlice";
+import { store } from "../store/store";
+import { setAnimation } from "../store/slices/AnimationSlice";
 
 export default function StartScanner() {
 	let previousScan = "";

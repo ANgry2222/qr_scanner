@@ -1,8 +1,9 @@
 import { createPortal } from "react-dom";
-import ModalForm from "./ModalForm/ModalForm";
+import ModalForm from "../ModalForm/ModalForm";
 import { KeyboardEvent, MouseEvent, useEffect, useRef } from "react";
-import { closeModal } from "./slices/ModalSlice";
+import { closeModal } from "../../store/slices/ModalSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
+import styles from "./Modal.module.scss";
 
 export default function Modal() {
 	const modalState = useAppSelector((state) => state.modal.isOpen);
@@ -38,11 +39,11 @@ export default function Modal() {
 					autoFocus
 					onKeyDown={(event) => closeModalByKeyPress(event)}
 					onClick={closeModalByClick}
-					className="open_dialog"
+					className={styles.open_dialog}
 				>
 					<div
 						onClick={(event) => modalClickEvent(event)}
-						style={{ gridColumn: 2, gridRow: 2 }}
+						className={styles.modal_wrapper}
 					>
 						<ModalForm />
 					</div>

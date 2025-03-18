@@ -1,12 +1,12 @@
 import { isMobile } from "react-device-detect";
-import StartScanner from "../StartScanner";
-import { stopScanner } from "../slices/ScannerSlice";
+import StartScanner from "../../utils/StartScanner";
+import { stopScanner } from "../../store/slices/ScannerSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
-import { StartIcon } from "../icons/StartIcon";
+import { StartIcon } from "../../icons/StartIcon";
 import styles from "./CameraButtons.module.scss";
-import { StopIcon } from "../icons/StopIcon";
-import { ReverseIcon } from "../icons/RevreseIcon";
-import { changeDevice } from "../slices/ScannerUpdateSlice";
+import { StopIcon } from "../../icons/StopIcon";
+import { ReverseIcon } from "../../icons/RevreseIcon";
+import { changeDevice } from "../../store/slices/ScannerUpdateSlice";
 
 export default function CameraButtons() {
 	const dispatch = useAppDispatch();

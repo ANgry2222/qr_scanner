@@ -1,0 +1,23 @@
+@use "../../styles/_media_queries";
+
+.results_container {
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+	@media #{media_queries.$desktop} {
+		grid-column: 4;
+		margin-top: 20px;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	@media #{media_queries.$mobile} {
+		margin-top: 15px;
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	@media #{media_queries.$desktop_small} {
+		margin-top: 15px;
+	}
+}

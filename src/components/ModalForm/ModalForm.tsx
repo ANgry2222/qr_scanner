@@ -1,9 +1,9 @@
 import { FormEvent, useRef, useState } from "react";
 import styles from "./ModalForm.module.scss";
-import { closeModal } from "../slices/ModalSlice";
-import { addItem } from "../slices/ItemListSlice";
+import { closeModal } from "../../store/slices/ModalSlice";
+import { addItem } from "../../store/slices/ItemListSlice";
 import { useAppDispatch } from "@/hooks/ReduxHooks";
-import { LocalizeDate } from "../ProcessScanData";
+import { LocalizeDate } from "../../utils/ProcessScanData";
 
 export default function Modal() {
 	const sumFieldRef = useRef<HTMLInputElement | null>(null);

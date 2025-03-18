@@ -2,7 +2,7 @@ import CameraButtons from "../CameraButtons/CameraButtons";
 import styles from "./ScannerBorder.module.scss";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "@/hooks/ReduxHooks";
-import { BorderIcon } from "../icons/BorderIcon";
+import { BorderIcon } from "../../icons/BorderIcon";
 
 export default function ScannerBorder() {
 	const isAnimating = useAppSelector((state) => state.animate.isAnimating);
