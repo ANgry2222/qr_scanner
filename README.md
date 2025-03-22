@@ -6,7 +6,7 @@ qr_scanner - проект для сбора данных о покупках п�
 -   Дата совершения покупки
 -   Время совершения покупки
 # Запуск приложения
-Приложение размещено на Github Pages, доступ к нему можно получить по ссылке [angry2222.github.io/qr_scanner](https://angry2222.github.io/qr_scanner/)
+Приложение размещено на Github Pages, доступ к нему можно получить по ссылке [angry2222.github.io/qr_scanner](https://angry2222.github.io/qr_scanner/).
 
 # Работа с приложением
 
