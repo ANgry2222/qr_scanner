@@ -25,6 +25,7 @@ qr_scanner - проект для сбора данных о покупках п�
 
 Чтобы удалить определённый элемент из списка нужно перетащить его справа налево до смены цвета индикатора удаления на красный, затем отпустить кнопку мыши.
 ![Пример использования GIF](https://i.ibb.co/fdqQGwPw/work-example-gif.gif)
+<a href="https://ibb.co/Sw5J7C9C"><img src="https://i.ibb.co/ZzGN1DkD/work-example-gif.gif" alt="work-example-gif" border="0"></a>
 
 ### Экспорт данных
 
