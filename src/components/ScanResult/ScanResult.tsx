@@ -1,7 +1,7 @@
 import { ScanListItem } from "@/pages";
 import { MouseEvent, useRef, useState } from "react";
 import styles from "./ScanResult.module.scss";
-import { DeleteSwipeIcon } from "../icons/DeleteSwipeIcon";
+import { DeleteSwipeIcon } from "../../icons/DeleteSwipeIcon";
 
 interface IProps {
 	scanResult: ScanListItem;

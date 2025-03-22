@@ -1,9 +1,9 @@
 import styles from "./ResultsTable.module.scss";
-import { openModal } from "../slices/ModalSlice";
-import { clearItemsList } from "../slices/ItemListSlice";
+import { openModal } from "../../store/slices/ModalSlice";
+import { clearItemsList } from "../../store/slices/ItemListSlice";
 import { useAppDispatch } from "@/hooks/ReduxHooks";
-import { PlusIcon } from "../icons/PlusIcon";
-import { DeleteIcon } from "../icons/DeleteIcon";
+import { PlusIcon } from "../../icons/PlusIcon";
+import { DeleteIcon } from "../../icons/DeleteIcon";
 import { ReactNode } from "react";
 
 export default function ResultsTable({ children }: { children: ReactNode[] }) {

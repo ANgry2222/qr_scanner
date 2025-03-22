@@ -42,13 +42,13 @@
 	@media #{media_queries.$desktop_medium} {
 		row-gap: 10px;
 		margin-top: 25px;
-		height: calc(100vh - 218px);
+		height: calc(100vh - 219px);
 	}
 
 	@media #{media_queries.$desktop_big} {
 		row-gap: 10px;
 		margin-top: 25px;
-		height: calc(100vh - 218px);
+		height: calc(100vh - 219px);
 	}
 }
 

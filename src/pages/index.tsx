@@ -1,9 +1,10 @@
-import ResultsSection from "@/components/ResultsSection";
-import ScanSection from "@/components/ScanSection";
-import Modal from "@/components/Modal";
-import { Provider } from "react-redux";
-import { store } from "../components/store";
+import ResultsSection from "@/components/ResultsSection/ResultsSection";
+import ScanSection from "@/components/ScanSection/ScanSection";
+import Modal from "@/components/Modal/Modal";
 import DownloadResultsButton from "@/components/DownloadResultsButton/DownloadResultsButton";
+import { Provider } from "react-redux";
+import { persistor, store } from "../store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export interface ScanListItem {
 	scanSum: string;
@@ -14,12 +15,14 @@ export interface ScanListItem {
 export default function Home() {
 	return (
 		<Provider store={store}>
-			<div className="app_container">
-				<Modal />
-				<ScanSection />
-				<ResultsSection />
-				<DownloadResultsButton />
-			</div>
+			<PersistGate loading={null} persistor={persistor}>
+				<div className="app_container">
+					<Modal />
+					<ScanSection />
+					<ResultsSection />
+					<DownloadResultsButton />
+				</div>
+			</PersistGate>
 		</Provider>
 	);
 }
