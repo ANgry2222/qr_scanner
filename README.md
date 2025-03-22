@@ -1,40 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+qr_scanner - проект для сбора данных о покупках при помощи сканирования QR-кодов на чеках.
 
-## Getting Started
+## Собираемые данные
 
-First, run the development server:
+-   Сумма покупки
+-   Дата совершения покупки
+-   Время совершения покупки
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Работа с приложением
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Получение данных с помощью сканера
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    Запустите сканирование кликом по кнопке 'GO'. Наведите камеру на QR-код на чеке и зафиксируйте до появления анимации. При необходимости отдалите или приблизьте камеру. Плохо пропечатанные и выцветшие QR-коды считываются гораздо хуже.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Ручной ввод данных
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+    Приложение позволяет добавить данные о покупке для подсчёта затрат вручную с помощью кнопки '+'. Поле суммы является обязательным для заполнения, поле даты и времени покупки на данный момент являются опциональными.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Очистка списка результатов
 
-## Learn More
+    Чтобы полностью очистить список необходимо кликнуть по кнопке с изображением корзины.
 
-To learn more about Next.js, take a look at the following resources:
+### Удаление одиночного элемента
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+    Чтобы удалить определённый элемент из списка нужно перетащить его справа налево до смены цвета индикатора удаления на красный, затем отпустить кнопку мыши.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Экспорт данных
 
-## Deploy on Vercel
+    Полученный список можно скачать в формате '.txt'. Файл будет содержать все введённые пользователем данные. Данные о покупках разделены табуляцией для удобного импорта в MS Excel и подобные программы.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Ссылка на Github Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+    [angry2222.github.io/qr_scanner](https://angry2222.github.io/qr_scanner/)
