@@ -10,9 +10,9 @@
     "dev-https": "next dev --experimental-https"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.6.0",
+    "@reduxjs/toolkit": "^2.6.1",
     "html5-qrcode": "^2.3.8",
-    "next": "15.1.6",
+    "next": "^15.2.4",
     "react": "^19.0.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",

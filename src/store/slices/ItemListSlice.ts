@@ -18,7 +18,7 @@ export const ItemListSlice = createSlice({
 			state.items = [];
 		},
 		addItem: (state, action: PayloadAction<ScanListItem>) => {
-			state.items.push(action.payload);
+			state.items.unshift(action.payload);
 		},
 		removeItemByIndex: (state, action: PayloadAction<number>) => {
 			state.items = state.items.filter((item, i) => i !== action.payload);
